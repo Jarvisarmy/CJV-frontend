@@ -23,17 +23,17 @@
     font-size: 14px;
     font-weight: 700;
 }
+
 @media (min-width: 1281px) {
-    .Navbar-contianer{
+    .Navbar-container{
         width: 100%;
         background-color: #232f3e;
         display: grid;
         grid-template-columns: 15% 70% 15%;
         color: white;
     }
-    
 }
-@media (min-width:961px) and (max-width: 1280px) {
+@media (min-width:961px) and (max-width:1280px) {
     .Navbar-container {
         width: 1280px;
         background-color: #232f3e;
