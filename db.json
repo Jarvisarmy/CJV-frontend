@@ -1,0 +1,206 @@
+{
+  "categories":[
+    {
+      "id": 1,
+      "categoryName": "Beauty",
+      "imgUrl": "/images/category/beauty.webp"
+    },
+    {
+      "id": 2,
+      "categoryName": "Clothes",
+      "imgUrl": "/images/category/clothes.webp"
+    },
+    {
+      "id": 3,
+      "categoryName": "Books",
+      "imgUrl": "/images/category/books.webp"
+    },
+    {
+      "id": 4,
+      "categoryName": "Sports",
+      "imgUrl": "/images/category/sports.webp"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "image": "/images/products/product1.webp",
+      "title": "7th Heaven Cucumber Peel Off Mask (5-pack), 5 Count",
+      "desc": "",
+      "price": "9.87",
+      "category": 1,
+      "isBest": true
+    },
+    {
+      "id": 2,
+      "image": "/images/products/product2.webp",
+      "title": "Makeup Sponge Blender",
+      "desc": "Terresa 10 Pack Makeup Blenders Foundation Blending Sponges, 9 Beauty Make Up Blender with 1 Sponge Holder, Cosmetic Tools for Liquid, Powder, BB Cream and Sunscreen",
+      "price": "16.99",
+      "category": 1,
+      "isBest": false
+    },
+    {
+      "id": 3,
+      "image": "/images/products/product3.webp",
+      "title": "BESTOPE Makeup Brush Set 18 Pcs",
+      "desc": "BESTOPE Makeup Brush Set 18 Pcs & 4 Makeup Sponges & 1 Makeup Brush Cleaner, Premium Beauty Blender Sponge Make Up Brushes Kit for Face Foundation Blending Powder Blush Concealer Eyeshadow Lip - Champagne Gold",
+      "price": "26.99",
+      "category": 1,
+      "isBest": true
+    },
+    {
+      "id": 4,
+      "image": "/images/products/product4.webp",
+      "title": "LAMUSELAND 4Pcs Beauty Foundation Soft Sponge Powder Cosmetic Puff Tool",
+      "desc": "Multi color 4 pcs makeup sponges in a box. Blender sponges for all kinds of cosmetics, foundation, BB cream, powder, concealer, isolation, liquid etc.",
+      "price": "12.99",
+      "category": 1,
+      "isBest": false
+    },
+    {
+      "id": 5,
+      "image": "/images/products/product5.webp",
+      "title": "Face Skin Scrubber",
+      "desc": "Skin Scrubber Face Skin Spatula Blackhead Remover Pore Cleaner Face Beauty Lifting Tool Comedones Extractor with 4 Modes, Facial Scrubber Spatula for Deep Cleansing With Two Silicone Case",
+      "price": "33.99",
+      "category": 1,
+      "isBest": true
+    },
+    {
+      "id": 6,
+      "image": "/images/products/product6.webp",
+      "title": "Eyeshadow Makeup Palette",
+      "desc": "Beauty Glazed Pressed Powder Eyeshadow Makeup Palette 35 Colors Shimmers And Matte Make Up Palette Blooming Up Eye Shadow High Pigmented Glitters Blendable Waterproof Soft Powder",
+      "price": "11.88",
+      "category": 1,
+      "isBest": true
+    },
+    {
+      "id": 7,
+      "image": "/images/products/product7.webp",
+      "title": "Schick Silk Touch Up Precision Eyebrow Shaper, Exfoliating Facial Razor for Women, and Dermaplaning Tool",
+      "desc": "Touch-ups are quick and easy with this versatile beauty tool that shapes eyebrows, removes fine hairs, and even smoothes skin",
+      "price": "5.97",
+      "category": 1,
+      "isBest": true
+    },
+    {
+      "id": 8,
+      "image": "/images/products/product8.webp",
+      "title": "Garnier Micellar All-in-1 Cleansing Water",
+      "desc": "Garnier Micellar All-in-1 Cleansing Water for All Skin Types Including Sensitive, Gentle Makeup Remover, 400ml",
+      "price": "8.49",
+      "category": 1,
+      "isBest": true
+    },
+    {
+      "id": 9,
+      "image": "/images/products/product9.webp",
+      "title": "Wet n Wild 537A Silk finish lipstick, 0.13 Ounce, Blind Date",
+      "desc": "Our lipstick formula contains all the same things as the other guys: rich color, vitamins A and E, aloe vera, and really feels like putting silk on your lips",
+      "price": "8.49",
+      "category": 1,
+      "isBest": false
+    },
+    {
+      "id": 10,
+      "image": "/images/products/product10.webp",
+      "title": "Face Roller",
+      "desc": "Jade Roller & Gua Sha, Face Roller, Facial Beauty Roller Skin Care Tools, BAIMEI Rose Quartz Massager for Face, Eyes, Neck, Body Muscle Relaxing and Relieve Fine Lines and Wrinkles",
+      "price": "29.95",
+      "category": 1,
+      "isBest": true
+    },
+    {
+      "id": 11,
+      "image": "/images/products/product11.webp",
+      "title": "Moisturizing Sheet Mask",
+      "desc": "Moisturizing Sheet Mask - Various Solution Facial Masks (10 Sheets) - Soothing, Firming, Purifying, Moisture, Nurturing, Brightening, Elasticity - Best of The Best Collections (10 Best Assorted) (Package May Vary)",
+      "price": "19.70",
+      "category": 1,
+      "isBest": true
+    },
+    {
+      "id": 12,
+      "image": "/images/products/product12.webp",
+      "title": "BEAUTY GLAZED 6pcs",
+      "desc": "BEAUTY GLAZED 6pcs/Set Liquid Lip Gloss Professional Lip Makeup Tool Velvet Matte Moisturizing Hydrating Nutritious Lipstick Kit",
+      "price": "11.88",
+      "category": 1,
+      "isBest": true
+    },
+    {
+      "id": 13,
+      "image": "/images/products/product13.webp",
+      "title": "Aztec Secret Healing Clay 1 lb (454 grams)",
+      "desc": "New Version 2 - Deep Pore Cleansing Facial & Body Mask - The Original 100% Natural Calcium Bentonite Clay - New Version 2 (Packaging May Vary)",
+      "price": "11.63",
+      "category": 1,
+      "isBest": true
+    },
+    {
+      "id": 14,
+      "image": "/images/products/product14.webp",
+      "title": "Revlon One-Step Hair Dryer",
+      "desc": "The same Brush designed with Nylon Pin & Tufted Bristles for detangling, improved volume and control. Unique Oval Brush Design for Smoothing the Hair, while the Round Edges Create Volume. 1100-Watt power provides just the right heat. Unlike conventional hair dryers, this volumizer can be placed closer to the scalp for lift. 3 Heat/Speed Settings for Styling Flexibility",
+      "price": "64.96",
+      "category": 1,
+      "isBest": false
+    },
+    {
+      "id": 15,
+      "image": "/images/products/product15.webp",
+      "title": "Long Sleeve Sweater",
+      "desc": "MetCuento Toddler Baby Boys Girls Hoodies Long Sleeve Sweater Tops Pants Kangaroo Pocket Fall Winter Clothes Set",
+      "price": "31.99",
+      "category": 2,
+      "isBest": false
+    },
+    {
+      "id": 16,
+      "image": "/images/products/product16.webp",
+      "title": "I Am Stronger Than Anger",
+      "desc": "Picture Book About Anger Management And Dealing With Kids Emotions And Feelings (Preschool Feelings Book, Self-Regulation Skills)",
+      "price": "12.03",
+      "category": 3,
+      "isBest": true
+    },
+    {
+      "id": 17,
+      "image": "/images/products/product17.webp",
+      "title": "Spikeball 1 Ball Sports Game Set",
+      "desc": "Outdoor Indoor Game for Teens, Family - Yard, Lawn, Beach, Tailgate - Includes Playing Net, 1 Ball, Drawstring Bag, Rule Book - Seen on Shark Tank (1 Ball Set)",
+      "price": "69.99",
+      "category": 4,
+      "isBest": false
+    },
+    {
+      "id": 18,
+      "image": "/images/products/product18.webp",
+      "title": "Embrava Water Bottle with Time Markers",
+      "desc": "24 Ounce - For Sports, Gym & Hiking - BPA and BPS-Free - One-Click Opening - Leakproof and Secure",
+      "price": "26.13",
+      "category": 4,
+      "isBest": true
+    },
+    {
+      "id": 19,
+      "image": "/images/products/product19.webp",
+      "title": "Dexter Coloring Book",
+      "desc": "A Stunning Coloring Book To Relax. A Way To Boost Creativity With Many Illustrations Paperback – Nov. 19 2020",
+      "price": "10.18",
+      "category": 3,
+      "isBest": false
+    },
+    {
+      "id": 20,
+      "image": "/images/products/product20.webp",
+      "title": "FAFAIR Workout Tops for Women Loose Yoga",
+      "desc": "Racerback Tops Athletic Tank with Built in Sports Bra Activewear Exercise Shirts",
+      "price": "29.99",
+      "category": 2,
+      "isBest": false
+    }
+  ]
+}
