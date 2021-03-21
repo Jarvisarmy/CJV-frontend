@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import './../css/Header.css';
 import { FiMenu } from 'react-icons/fi';
 import { GoSearch } from 'react-icons/go';
 import { BiCart } from 'react-icons/bi';

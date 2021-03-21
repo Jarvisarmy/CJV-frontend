@@ -1,0 +1,226 @@
+
+.form-main {
+    border-radius: 4px;
+    border: 1px #ddd solid;
+    padding-top: 25px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+}
+.login-bottom {
+    text-align: center;
+}
+.form-title {
+    color: #111;
+    padding-bottom: 4px;
+    font-weight: 400;
+    margin-bottom: 10px;
+
+}
+.form-label {
+    font-weight: 700;
+    font-size: 13px;
+    color: #111;
+    padding-top: 30px;
+    padding-left: 4px;
+}
+.form-input-content {
+    width: 350px;
+    height: 35px;
+    padding: 7px 7px;
+    border: 1px solid #a6a6a6;
+    border-top-color: #949494;
+    border-radius: 3px;
+    background-color: white;
+}
+.form-input {
+    margin-bottom: 15px;
+    width: 350px;
+}
+.form-yellow-button {
+    text-align: center;
+    display: block;
+    width: 350px;
+    height: 35px;
+    background: #f0c14b;
+    background-color: #a88734 #9c7e31 #846a29;
+    border-radius: 3px;
+    border-color: #adb1b8 #a2a6ac #8d9096;
+    border-style: solid;
+    border-width: 1px;
+}
+.form-policy {
+    font-size: 12px;
+    line-height: 1.5;
+    margin-top: 20px;
+    color: #111;
+}
+.form-policy > a {
+    color: #0066c0;
+    text-decoration: none;
+}
+.login-help {
+    font-size: 13px;
+    line-height: 19px;
+    display: block;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    text-decoration: none;
+    color: #0066c0;
+}
+.form-logo {
+    margin: 15px auto;
+}
+.login-divider {
+    position: relative;
+}
+.login-divider h5 {
+    font-size: 12px;
+    color: #767676;
+    display: inline-block;
+    font-weight: 400;
+    background-color: #fff;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    position: relative;
+    z-index: 2;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.login-divider:after {
+    content: "";
+    width: 100%;
+    background-color: transparent;
+    display: block;
+    height: 1px;
+    top: 50%;
+    border-top: 1px solid #e7e7e7;
+    margin-top: 4px;
+    position: absolute;
+    z-index: 1;
+}
+.login-create-button {
+    width: 400px;
+    height: 35px;
+    background-color: transparent;
+    border: #adb1b8 #a2a6ac #8d9096;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px;
+    font-size: 13px;
+}
+.form-footer-divider-inner {
+    height: 44px;
+    margin-top: 30px;
+    background: linear-gradient(to bottom, rgba(0,0,0,.14), rgba(0,0,0,.03) 3px, transparent);
+    font-size: 13px;
+    color: #111;
+    z-index: 0;
+}
+.form-footer-divider-inner:after {
+    display: block;
+    width: 100%;
+    height: 44px;
+    background-color: transparent;
+    background: linear-gradient(to right, #fff, rgba(255,255,255,0),#fff);
+    z-index: 1;
+    content: "";
+}
+.form-footer{
+    text-align: center;
+    font-size: 11px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #0066c0;
+}
+.form-footer > a {
+    padding: 15px;
+}
+.form-auth {
+    font-size: 11px;
+    color: #555;
+    text-align: center;
+}
+.alert-icon {
+    height: 15px;
+    color: #c40000;
+}
+.alert-content {
+    display: inline-block;
+    font-size: 12px;
+    color: #c40000;
+}
+.form-icon {
+    background-image: url(https://m.media-amazon.com/images/S/sash/BgnVchebDR5Ds4h.png);
+    background-size: 400px 750px;
+    background-repeat: no-repeat;
+    vertical-align: top;
+    margin: auto;
+}
+.form-icon-logo {
+    background-position: -5px -130px;
+    height: 31px;
+    width: 103px;
+}
+.reg-link {
+    font-size: 13px;
+}
+.reg-link > a {
+    text-decoration: none;
+    color: #0066c0;
+}
+
+
+@media (min-width: 1281px) {
+    .form-outside-container {
+        width: 700px;
+        margin: auto;
+    }
+    
+    .form-inside-container {
+        width: 400px;
+        margin: 0 auto;
+        color: #111;
+        background-color: #fff;
+    }
+}
+@media (min-width:961px) and (max-width: 1280px) {
+    .form-outside-container {
+        width: 700px;
+        margin: auto;
+    }
+    
+    .form-inside-container {
+        width: 400px;
+        margin: 0 auto;
+        color: #111;
+        background-color: #fff;
+    }
+}
+@media (min-width:481px) and (max-width: 960px) {
+    .form-outside-container {
+        width: 480px;
+        margin: auto;
+    }
+    
+    .form-inside-container {
+        width: 400px;
+        margin: 0 auto;
+        color: #111;
+        background-color: #fff;
+    }
+    
+}
+@media (max-width: 480px) {
+    .form-outside-container {
+        width: 400px;
+        margin: auto;
+    }
+    
+    .form-inside-container {
+        width: 100%px;
+        margin: 0 auto;
+        color: #111;
+        background-color: #fff;
+    }
+}

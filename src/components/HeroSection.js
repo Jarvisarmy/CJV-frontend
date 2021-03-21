@@ -1,8 +1,9 @@
 import React from 'react'
 import { Carousel } from 'react-bootstrap';
+import './../css/HeroSection.css';
 const HeroSection = () => {
     return (
-        <Carousel style={{"width":"100%"}}>
+        <Carousel className="Hero-section-container">
             <Carousel.Item>
               <img
                 className="d-block w-100"

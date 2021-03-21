@@ -1,6 +1,7 @@
 import React from 'react'
 import {useContext} from 'react';
 import DataContext from "../context/DataContext";
+import './../css/NavBar.css';
 const NavBar = () => {
     const {firstFourCategories} = useContext(DataContext);
     return (

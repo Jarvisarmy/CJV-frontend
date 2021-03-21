@@ -13,8 +13,7 @@ import {useState, useEffect} from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from 'react-router-dom';
 
 
@@ -70,11 +69,11 @@ function App() {
     if (id === "0") {
       return products;
     }
-    var pros = products.filter(product => product.category == id);
+    var pros = products.filter(product => product.category.toString() === id);
     return pros;
   }
   const getProductById = (id) => {
-    var pro = products.filter(product => product.id == id);
+    var pro = products.filter(product => product.id.toString() === id);
     console.log(pro);
     console.log(pro[0]);
     return pro[0];

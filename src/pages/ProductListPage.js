@@ -1,5 +1,6 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
+import './../css/ProductListPage.css';
 const ProductListPage = (props) => {
     const [curPage, setCurPage] = useState(1);
     const [productsOnPage, setProductsOnPage] = useState([]);

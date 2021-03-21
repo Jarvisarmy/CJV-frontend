@@ -1,0 +1,234 @@
+.Footer-container {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 45px 360px 120px 220px;
+}
+.Footer-container > div:nth-child(1) {
+    background-color: #37475A;
+    text-align: center;
+    color: white;
+    padding-top: 14px;
+    font-size: 13px;
+}
+
+.Footer-container > div:nth-child(3) {
+    background-color: #232F3E;
+    border-top: 1px solid #3a4553;
+    padding-left: 30%;
+    padding-top: 25px;
+}
+
+.Footer-container > div:nth-child(4) > div {
+    width: 100px;
+    line-height: 10px;
+}
+.Footer-container > div:nth-child(4) > div > a {
+    display: block;
+    padding-top: 5px;
+    font-size: 10px;
+    color: #999;
+}
+
+
+
+.footer-top-head {
+    font-weight: bold;
+    font-size: 16px;
+    color: #FFF;
+    padding-bottom: 10px;
+}
+
+.footer-bottom-head {
+    display: block;
+    font-weight: bold;
+    color: #DDD;
+    font-size: 11px;
+}
+.footer-icon {
+    background-size: 390px;
+    background-repeat: no-repeat;
+    background-image: url("https://images-na.ssl-images-amazon.com/images/G/15/gno/sprites/nav-sprite-global-2x-hm-dsk-reorg._CB405936603_.png");
+}
+
+.footer-au {
+    height: 80px;
+    background-color: #131A22;
+    color: #DDD;
+    padding-top: 30px;
+    padding-left: 20%;
+}
+
+@media (min-width: 1281px) {
+    .Footer-container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 45px 360px 120px 220px;
+    }
+    .Footer-container > div:nth-child(4) {
+        background-color: #131A22;
+        display: grid;
+        grid-template-columns: 20% 20% 20% 20% 20%;
+        grid-template-rows: 33.33% 33.33% 33.33%;
+        color: white;
+        padding-top: 30px;
+        padding-left: 10px;
+    }
+    .Footer-container > div:nth-child(2) {
+        background-color: #232F3E;
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+        padding-top: 40px;
+        padding-left: 40px;
+    }
+    .Footer-container > div:nth-child(2) > div {
+        width: 185px;
+        line-height: 15px;
+        color: white;
+    }
+    .Footer-container > div:nth-child(2) > div > a {
+        display: block;
+        padding-top: 10px;
+        font-size: 14px;
+        color: #DDD;
+    }
+    .footer-icon-logo {
+        background-position: -7px -45px;
+        width: 120px;
+        height: 50px;
+        margin-top: 5px;
+    }
+    
+}
+@media (min-width:961px) and (max-width: 1280px) {
+    .Footer-container {
+        width: 1280px;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 45px 360px 120px 220px;
+    }
+    .Footer-container > div:nth-child(4) {
+        background-color: #131A22;
+        display: grid;
+        grid-template-columns: 20% 20% 20% 20% 20%;
+        grid-template-rows: 33.33% 33.33% 33.33%;
+        color: white;
+        padding-top: 30px;
+        padding-left: 10px;
+    }
+    .Footer-container > div:nth-child(2) {
+        background-color: #232F3E;
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+        padding-top: 40px;
+        padding-left: 40px;
+    }
+    .Footer-container > div:nth-child(2) > div {
+        width: 185px;
+        line-height: 15px;
+        color: white;
+    }
+    .Footer-container > div:nth-child(2) > div > a {
+        display: block;
+        padding-top: 10px;
+        font-size: 14px;
+        color: #DDD;
+    }
+    .footer-icon-logo {
+        background-position: -7px -45px;
+        width: 120px;
+        height: 50px;
+        margin-top: 5px;
+    }
+}
+@media (min-width:481px) and (max-width: 960px) {
+    .Footer-container {
+        width: 960px;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 45px 360px 120px;
+    }
+    .Footer-container > div:nth-child(4) {
+        background-color: #131A22;
+        display: grid;
+        grid-template-columns: 20% 20% 20% 20% 20%;
+        grid-template-rows: 33.33% 33.33% 33.33%;
+        color: white;
+        padding-top: 30px;
+        padding-left: 10px;
+    }
+    .Footer-container > div:nth-child(2) {
+        background-color: #232F3E;
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+        padding-top: 40px;
+        padding-left: 40px;
+    }
+    .Footer-container > div:nth-child(2) > div {
+        width: 185px;
+        line-height: 15px;
+        color: white;
+    }
+    .Footer-container > div:nth-child(2) > div > a {
+        display: block;
+        padding-top: 10px;
+        font-size: 14px;
+        color: #DDD;
+    }
+    .footer-icon-logo {
+        background-position: -7px -45px;
+        width: 120px;
+        height: 50px;
+        margin-top: 5px;
+    }
+}
+@media (max-width: 480px) {
+    .Footer-container {
+        width: 480px;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 45px 360px 120px;
+    }
+    .Footer-container > div:nth-child(4) {
+        display: none;
+    }
+    .Footer-container > div:nth-child(2) {
+        background-color: #232F3E;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        padding-top: 40px;
+        padding-left: 40px;
+    }
+    .Footer-container > div:nth-child(2) > div:nth-child(1) {
+        display: none;
+    }
+    .Footer-container > div:nth-child(2) > div:nth-child(4) {
+        display: none;
+    }
+    .Footer-container > div:nth-child(2) > div {
+        width: 185px;
+        line-height: 15px;
+        color: white;
+    }
+    .Footer-container > div:nth-child(2) > div > a {
+        display: block;
+        padding-top: 10px;
+        font-size: 14px;
+        color: #DDD;
+    }
+    .footer-icon-logo {
+        background-position: -7px -45px;
+        width: 120px;
+        height: 50px;
+        margin-top: 5px;
+        padding-left: 0px;
+    }
+    .footer-au {
+        font-size: 10px;
+        height: 80px;
+        background-color: #131A22;
+        color: #DDD;
+        padding-top: 30px;
+        padding-left: 5px;
+    }
+}

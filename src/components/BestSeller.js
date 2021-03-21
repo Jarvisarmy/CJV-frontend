@@ -2,6 +2,7 @@ import React from 'react'
 import { Carousel } from 'react-bootstrap';
 import {useContext} from 'react';
 import DataContext from "../context/DataContext";
+import './../css/BestSellers.css';
 const BestSeller = () => {
     const {getBestSellers} = useContext(DataContext);
 
@@ -24,7 +25,7 @@ const BestSeller = () => {
     }
     return (
         <div className="Best-seller-container">
-            <div style={{fontSize:"22px", color:"#444", display:'inline-block'}}> Best Sellers</div> <a href="/bestSellers">See more</a>
+            <div className="best-seller-section-title"> Best Sellers</div> <a href="/bestSellers">See more</a>
             <Carousel className="best-seller-carousel" indicators={false}>
                 
                 {modifyProducts(getBestSellers()).map((lists,index)=>(

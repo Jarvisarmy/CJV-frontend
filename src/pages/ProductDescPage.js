@@ -1,5 +1,5 @@
-import React from 'react'
-
+import React from 'react';
+import './../css/ProductDescPage.css';
 const ProductDescPage = (props) => {
     if (props.product !== undefined) {
         return (

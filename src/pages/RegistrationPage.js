@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import { IoAlert } from 'react-icons/io5';
+import './../css/Form.css';
 const RegistrationPage = () => {
     const [name, setName] = useState("");
     const [nameErr, setNameErr] = useState(false);

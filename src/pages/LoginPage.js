@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { IoAlert } from 'react-icons/io5';
-
+import './../css/Form.css';
 const LoginPage = () => {
     const [account, setAccount] = useState("");
     const [err, setErr] = useState(false);

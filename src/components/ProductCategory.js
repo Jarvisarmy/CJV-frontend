@@ -1,6 +1,7 @@
 import React from 'react'
 import {useContext} from 'react';
 import DataContext from "../context/DataContext";
+import './../css/ProductCategory.css';
 const ProductCategory = () => {
     const {firstFourCategories} = useContext(DataContext);
     return (
