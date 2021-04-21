@@ -2,50 +2,93 @@ import React from 'react'
 import { useState } from 'react';
 import { IoAlert } from 'react-icons/io5';
 import './../css/Form.css';
+import {Link} from 'react-router-dom';
 const RegistrationPage = () => {
-    const [name, setName] = useState("");
-    const [nameErr, setNameErr] = useState(false);
-    const [nameMsg, setNameMsg] = useState("");
+    const [firstname, setFirstname] = useState("");
+    const [firstnameMsg, setFirstnameMsg] = useState("");
+    const [lastname, setLastname] = useState("");
+    const [lastnameMsg, setLastnameMsg] = useState("");
     const [email,setEmail] = useState("");
-    const [emailErr, setEmailErr] = useState(false);
     const [emailMsg, setEmailMsg] = useState("");
+    const [username, setUsername] = useState("");
+    const [usernameMsg, setUsernameMsg] = useState("");
     const [password, setPassword] = useState("");
-    const [passwordErr, setPasswordErr] = useState(false);
     const [passwordMsg, setPasswordMsg] = useState("");
 
     const checkValid = () => {
+        var isValid = true;
         // regular expression taken from chromium
         var rePassword = new RegExp(/[\s~`!@#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?()\._]/);
         var reEmail = new RegExp(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
         if (password == "") {
-            setPasswordErr(true);
             setPasswordMsg("Type your password again");
+            isValid = false;
         } else if (password.length < 6) {
-            setPasswordErr(true);
             setPasswordMsg("Passwords do not match");
+            isValid = false;
         } else if (password.length > 12) {
-            setPasswordErr(true);
             setPasswordMsg("Passwords do not match");
+            isValid = false;
         } else if (rePassword.test(password)) {
-            setPasswordErr(true);
             setPasswordMsg("Password contains special character");
+            isValid = false;
         } else {
-            setPasswordErr(false);
             setPasswordMsg("");
         }
         if (!reEmail.test(String(email).toLowerCase())) {
-            setEmailErr(true);
             setEmailMsg("Invalid e-mail address");
+            isValid = false;
         } else {
-            setEmailErr(false);
             setEmailMsg("");
         }
-        if (name === "") {
-            setNameErr(true);
-            setNameMsg("Enter your name");
+        if (firstname === "") {
+            setFirstnameMsg("first name is empty");
+            isValid = false;
         } else {
-            setNameErr(false);
-            setNameMsg("");
+            setFirstnameMsg("");
+        }
+        if (lastname === "") {
+            setLastnameMsg("last name is empty");
+            isValid = false;
+        } else {
+            setLastnameMsg("");
+        }
+        if (username === "") {
+            setUsernameMsg("the username is empty");
+            isValid = false;
+        } else {
+            setUsernameMsg("");
+        }
+        return isValid;
+
+    }
+    const register = ()=>{
+        if (checkValid) {
+            fetch('http://localhost:5000/users',{
+                method:"POST",
+                headers: {
+                    'Content-Type':"application/json"
+                },
+                body: JSON.stringify({
+                    firstName: firstname,
+                    lastName: lastname,
+                    email:email,
+                    username: username,
+                    password: password,
+                    role:"user"
+                })
+            })
+                .then(response=>{
+                    if (response.status === 400) {
+                        setUsernameMsg("the username exists");
+                    } else {
+                        
+                        document.getElementById("login").click();
+                    }
+                })
+                .catch(err=>{
+                    console.log(err);
+            });
         }
 
     }
@@ -58,15 +101,27 @@ const RegistrationPage = () => {
                 <div className="form-main">
                     <h1 className="form-title">Create account</h1>
                     <div className="form-input">
-                        <label className="form-label" htmlFor="reg-name"> Your name </label>
+                        <label className="form-label" htmlFor="reg-firstname"> first name </label>
                         <br />
-                        <input className="form-input-content" type="text" id="reg-name" value={name} onChange={(event)=>{
-                            setName(event.target.value);
+                        <input className="form-input-content" type="text" id="reg-firstname" value={firstname} onChange={(event)=>{
+                            setFirstname(event.target.value);
                         }}/>
-                        <div className={nameErr ? "alert" : "alert hidden"}>
-                            <IoAlert className="alert-icon"/>
+                        <div>
                             <div className="alert-content">
-                                {nameMsg}
+                                {firstnameMsg}
+
+                            </div>
+                        </div>
+                    </div>
+                    <div className="form-input">
+                        <label className="form-label" htmlFor="reg-lastname"> Your name </label>
+                        <br />
+                        <input className="form-input-content" type="text" id="reg-lastname" value={lastname} onChange={(event)=>{
+                            setLastname(event.target.value);
+                        }}/>
+                        <div>
+                            <div className="alert-content">
+                                {lastnameMsg}
 
                             </div>
                         </div>
@@ -77,10 +132,22 @@ const RegistrationPage = () => {
                         <input className="form-input-content" type="text" id="reg-email" value={email} onChange={(event)=>{
                             setEmail(event.target.value);
                         }}/>
-                        <div className={emailErr ? "alert" : "alert hidden"}>
-                            <IoAlert className="alert-icon"/>
+                        <div>
                             <div className="alert-content">
                                 {emailMsg}
+
+                            </div>
+                        </div>
+                    </div>
+                    <div className="form-input">
+                        <label className="form-label" htmlFor="reg-username"> username </label>
+                        <br />
+                        <input className="form-input-content" type="text" id="reg-username" value={username} onChange={(event)=>{
+                            setUsername(event.target.value);
+                        }}/>
+                        <div>
+                            <div className="alert-content">
+                                {usernameMsg}
 
                             </div>
                         </div>
@@ -91,23 +158,22 @@ const RegistrationPage = () => {
                         <input className="form-input-content" type="text" id="reg-password" placeholder="Password length between 6 to 12" value={password} onChange={(event)=>{
                             setPassword(event.target.value);
                         }}/>
-                        <div className={passwordErr ? "alert" : "alert hidden"}>
-                            <IoAlert className="alert-icon"/>
+                        <div>
                             <div className="alert-content">
                                 {passwordMsg}
 
                             </div>
                         </div>
                     </div>
-                    <button className="form-yellow-button" onClick={checkValid}>Create your Amazon account</button>
+                    <button className="form-yellow-button" onClick={register}>Create your Amazon account</button>
                     <p href="" className="form-policy">By continuing, you agree to Amazon's <a>Conditions of Use and Privacy Notice</a>.</p>
                     <div className="form-footer-divider">
                         <div className="form-footer-divider-inner">
 
                         </div>
                     </div>
-                    <p className="reg-link"> Already have an account? <a href="/login">Sign in</a></p>
-                    <p className="reg-link">Purchasing for work? <a>Create a business account</a></p>
+                    <p className="reg-link"> Already have an account? <Link id="login" to="/login">Sign in</Link></p>
+                    <p className="reg-link">Purchasing for work? <Link>Create a business account</Link></p>
                     
                 </div>
                 <div className="form-footer-divider">

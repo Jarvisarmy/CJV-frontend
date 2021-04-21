@@ -14,7 +14,7 @@ const NavBar = () => {
                     Best Sellers
 
                 </a>
-                {firstFourCategories.map((cat)=>(<a href={"/products/"+cat.id} key={cat.id}> {cat.categoryName} </a>))}
+                {firstFourCategories.map((cat,index)=>(<a href={"/products/"+cat} key={index}> {cat} </a>))}
             </div>
             <div>
                 New deals everyday

@@ -2,14 +2,63 @@ import React from 'react';
 import { useState } from 'react';
 import { IoAlert } from 'react-icons/io5';
 import './../css/Form.css';
+import {Redirect, Link} from 'react-router-dom';
+import {useContext} from 'react';
+import DataContext from './../context/DataContext';
+import { BiWindowOpen } from 'react-icons/bi';
+import context from 'react-bootstrap/esm/AccordionContext';
+
 const LoginPage = () => {
-    const [account, setAccount] = useState("");
-    const [err, setErr] = useState(false);
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [usernameErr, setUsernameErr] = useState("");
+    const [passwordErr, setPasswordErr] = useState("");
+    const {isLogin, setIsLogin, setLoginUser} = useContext(DataContext);
     const checkValid = ()=> {
-        if (account == "") {
-            setErr(true);
+        var isValid = true;
+        if (username === "") {
+            setUsernameErr("the username is empty");
+            isValid = false;
         } else {
-            setErr(false);
+            setUsernameErr("");
+        }
+        if (password === "") {
+            setPasswordErr("the password is empty");
+            isValid = false;
+        } else {
+            setPasswordErr("");
+        }
+        return isValid;
+    }
+    const login = ()=>{
+        if (checkValid()) {
+            fetch('http://localhost:5000/auth',{
+                method:"POST",
+                headers: {
+                    'Content-Type':"application/json"
+                },
+                body: JSON.stringify({
+                    username: username,
+                    password: password
+                })
+            })
+                .then(response=>{
+                    if (response.status === 403) {
+                        setUsernameErr("invalid username or password");
+                    } else {
+                        setIsLogin(true);
+                        console.log(isLogin);
+                        response.json().then(res=>{
+                            setLoginUser(res.body[0]);
+                        }).catch(err=>{
+                            console.log(err);
+                        })
+                        document.getElementById("login").click();
+                    }
+                })
+                .catch(err=>{
+                    setUsernameErr("invalid username or password");
+            });
         }
     }
     return (
@@ -21,20 +70,30 @@ const LoginPage = () => {
             <div className="form-main">
                 <h1 className="form-title"> Sign-in</h1>
                 <div className="form-input">
-                    <label className="form-label" htmlFor="login-email-phone"> E-mail address or mobile phone number </label>
+                    <label className="form-label" htmlFor="login-username"> username </label>
                     <br />
-                    <input className="form-input-content" type="text" id="login-email-phone" value={account} onChange={(event)=>{
-                        setAccount(event.target.value);
+                    <input className="form-input-content" type="text" id="login-username" value={username} onChange={(event)=>{
+                        setUsername(event.target.value);
                     }}/>
-                    <div className={err ? "alert" : "alert hidden"}>
-                        <IoAlert className="alert-icon"/>
+                    <div>
                         <div className="alert-content">
-                            Enter your e-mail address or mobile phone number
+                            {usernameErr}
+
+                        </div>
+                    </div>
+                    <label className="form-label" htmlFor="login-password"> password </label>
+                    <br />
+                    <input className="form-input-content" type="text" id="login-password" value={password} onChange={(event)=>{
+                        setPassword(event.target.value);
+                    }}/>
+                    <div>
+                        <div className="alert-content">
+                            {passwordErr}
 
                         </div>
                     </div>
                 </div>
-                <button className="form-yellow-button" onClick={checkValid}>Continue</button>
+                <button className="form-yellow-button" onClick={login}>Continue</button>
                 <p href="" className="form-policy">By continuing, you agree to Amazon's <a>Conditions of Use and Privacy Notice</a>.</p>
                 <a href="" className="login-help"> Need Help?</a>
             </div>
@@ -56,6 +115,7 @@ const LoginPage = () => {
             </div>
             <p className="form-auth"> @ 2008-2021, Amazon.com, Inc. or its affiliates</p>
         </div>
+        <Link className="display" to="/dashboard" id="login" />
         </div>
     )
 }

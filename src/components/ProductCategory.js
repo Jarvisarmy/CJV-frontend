@@ -7,12 +7,12 @@ const ProductCategory = () => {
     return (
         <>
         <div className="Product-category-container">
-            {firstFourCategories.map((cat)=>(
-            <div className="show-card-container" key={cat.id}>
+            {firstFourCategories.map((cat,index)=>(
+            <div className="show-card-container" key={index}>
             <div className="show-card">
-                <p className="show-card-title">{cat.categoryName}</p>
-                <img className="show-card-image" src={cat.imgUrl} />
-                <a className="show-card-link" href={"/products/"+cat.id} >See more</a>
+                <p className="show-card-title">{cat}</p>
+                <img className="show-card-image" src={"/images/category/"+cat+".webp"} />
+                <a className="show-card-link" href={"/products/"+cat} >See more</a>
             </div>
             </div>))}
             

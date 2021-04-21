@@ -7,8 +7,11 @@ import LoginPage from './../pages/LoginPage.js';
 import RegistrationPage from './../pages/RegistrationPage.js';
 import ProductListPage from './../pages/ProductListPage.js';
 import ProductDescPage from './../pages/ProductDescPage.js';
+import Dashboard from './../pages/Dashboard.js';
 import DataContext from "../context/DataContext";
 import {useState, useEffect} from 'react';
+
+
 
 import {
   BrowserRouter as Router,
@@ -22,23 +25,26 @@ function App() {
   const [firstFourCategories, setFirstFourCategories] = useState([]);
   const [products, setProducts] = useState([]);
   const [adjustedProducts, setAdjustedProducts] = useState([]);
+  const [isLogin, setIsLogin] = useState(false);
+  const [loginUser, setLoginUser] = useState({});
   const getAllCategories = ()=>{
-    fetch('http://localhost:3000/categories')
+    fetch('http://localhost:5000/products/cat')
     .then(response=>response.json())
     .then(result=>{
         console.log(result);
-        setCategories(result);
-        setFirstFourCategories(result.slice(0,4));
+        setCategories(result.body);
+        setFirstFourCategories(result.body.slice(0,4));
     })
     .catch(err=>{
         console.log(err);
     });
   }
   const getAllProducts = ()=>{
-    fetch('http://localhost:3000/products')
+    fetch('http://localhost:5000/products')
     .then(response=>response.json())
     .then(result=>{
-        setProducts(result);
+        console.log(result.body);
+        setProducts(result.body);
         modifyProducts();
     })
     .catch(err=>{
@@ -62,7 +68,7 @@ function App() {
     setAdjustedProducts(result);
   }
   const getBestSellers = () =>{
-    var bestSellers = products.filter(product => product.isBest);
+    var bestSellers = products.filter(product => product.best);
     return bestSellers;
   }
   const getProductByCategory = (id)=>{
@@ -93,7 +99,7 @@ function App() {
   },[]);
   return (
     <div className="App">
-      <DataContext.Provider value={{categories, products, firstFourCategories, adjustedProducts, getBestSellers,getProductByCategoryAndName}}>
+      <DataContext.Provider value={{isLogin, loginUser, setIsLogin, setLoginUser, categories, products, firstFourCategories, adjustedProducts, getBestSellers,getProductByCategoryAndName}}>
         <Router>
           <Switch>
             <Route exact path="/">
@@ -112,6 +118,9 @@ function App() {
             <Route path="/products/:cat" render={(props) => <ProductListPage products={getProductByCategory(props.match.params.cat)} />} />
             <Route path="/product/:id" render={(props) =><ProductDescPage product={getProductById(props.match.params.id)} />} />
             <Route path="/items/:cat/:name" render={(props)=><ProductListPage products={getProductByCategoryAndName(props.match.params.cat,props.match.params.name)}/>} />
+            <Route path="/dashboard">
+              <Dashboard />
+            </Route>
           </Switch>
         </Router>
       </DataContext.Provider>

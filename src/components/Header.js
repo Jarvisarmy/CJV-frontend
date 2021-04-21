@@ -8,7 +8,7 @@ import DataContext from './../context/DataContext';
 import {useState, useEffect} from 'react';
 
 const Header = () => {
-    const {categories} = useContext(DataContext);
+    const {isLogin, loginUser, categories} = useContext(DataContext);
     const [searchLink, setSearchLink] = useState("/products/0");
     const getSearchLink = ()=> {
         var val = document.getElementById("mySelect").value;
@@ -31,8 +31,8 @@ const Header = () => {
             <div className="header-searchBar-container">
                 <select id="mySelect" onChange={getSearchLink}>
                     <option value={0} >All</option>
-                    {categories.map((category)=>(
-                        <option value={category.id} key={category.id}>{category.categoryName}</option>
+                    {categories.map((category,index)=>(
+                        <option value={category} key={index}>{category}</option>
                     ))}
                 </select>
                 <input type="text" id="header-searchBar" name="searchBar" onChange={getSearchLink}/>
@@ -41,7 +41,7 @@ const Header = () => {
             <select className="header-lan-select">lan</select>
             <a href="/login" className="header-sign-in">
                 <div>
-                    <span>Hello, Sign in</span>
+                    <span>{!isLogin? "Hello, Sign in" : loginUser.username}</span>
                 </div>
             </a>
             <a href="" className="header-button">

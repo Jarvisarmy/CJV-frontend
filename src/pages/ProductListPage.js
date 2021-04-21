@@ -6,6 +6,7 @@ const ProductListPage = (props) => {
     const [productsOnPage, setProductsOnPage] = useState([]);
     
     const getPages = ()=>{
+        console.log(props.products);
         var result = []
         for (var i = 0; i<=props.products.length/12; i++) {
             var temp = [];
@@ -25,7 +26,7 @@ const ProductListPage = (props) => {
     useEffect(()=>{
         var result = getPages();
         setProductsOnPage(result);
-    },[productsOnPage]);
+    },[props.products]);
     return (
         
 
