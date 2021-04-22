@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import { IoAlert } from 'react-icons/io5';
 import './../css/Form.css';
-import constant from './../coonstant.js';
+import constant from './../constant.js';
 import {Link} from 'react-router-dom';
 const RegistrationPage = () => {
     const [firstname, setFirstname] = useState("");
