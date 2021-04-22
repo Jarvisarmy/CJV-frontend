@@ -3,7 +3,16 @@ import {useContext} from 'react';
 import DataContext from "../context/DataContext";
 import './../css/ProductCategory.css';
 const ProductCategory = () => {
-    const {firstFourCategories} = useContext(DataContext);
+    const {firstFourCategories, getProductByCategory} = useContext(DataContext);
+    
+    const getImage = (cat)=>{
+        const products = getProductByCategory(cat);
+        if (products[0] !== undefined) {
+            return products[0].image;
+        } else {
+            return "";
+        }
+    }
     return (
         <>
         <div className="Product-category-container">
@@ -11,7 +20,7 @@ const ProductCategory = () => {
             <div className="show-card-container" key={index}>
             <div className="show-card">
                 <p className="show-card-title">{cat}</p>
-                <img className="show-card-image" src={"./images/category/"+cat+".webp"} />
+                <img className="show-card-image" src={getImage(cat)} />
                 <a className="show-card-link" href={"/products/"+cat} >See more</a>
             </div>
             </div>))}

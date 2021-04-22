@@ -73,6 +73,7 @@ function App() {
     var bestSellers = products.filter(product => product.best);
     return bestSellers;
   }
+
   const getProductByCategory = (id)=>{
     if (id === "0") {
       return products;
@@ -101,7 +102,7 @@ function App() {
   },[]);
   return (
     <div className="App">
-      <DataContext.Provider value={{isLogin, loginUser, setIsLogin, setLoginUser, categories, products, firstFourCategories, adjustedProducts, getBestSellers,getProductByCategoryAndName}}>
+      <DataContext.Provider value={{getProductByCategory,isLogin, loginUser, setIsLogin, setLoginUser, categories, products, firstFourCategories, adjustedProducts, getBestSellers,getProductByCategoryAndName}}>
         <Router>
           <Switch>
             <Route exact path="/">
