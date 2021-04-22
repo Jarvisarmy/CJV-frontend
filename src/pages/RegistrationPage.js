@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import { IoAlert } from 'react-icons/io5';
 import './../css/Form.css';
+import constant from './../coonstant.js';
 import {Link} from 'react-router-dom';
 const RegistrationPage = () => {
     const [firstname, setFirstname] = useState("");
@@ -64,7 +65,7 @@ const RegistrationPage = () => {
     }
     const register = ()=>{
         if (checkValid) {
-            fetch('http://localhost:5000/users',{
+            fetch(constant.url+'/users',{
                 method:"POST",
                 headers: {
                     'Content-Type':"application/json"

@@ -10,6 +10,7 @@ import ProductDescPage from './../pages/ProductDescPage.js';
 import Dashboard from './../pages/Dashboard.js';
 import DataContext from "../context/DataContext";
 import {useState, useEffect} from 'react';
+import constant from './../constant.js';
 
 
 
@@ -28,7 +29,7 @@ function App() {
   const [isLogin, setIsLogin] = useState(false);
   const [loginUser, setLoginUser] = useState({});
   const getAllCategories = ()=>{
-    fetch('http://localhost:5000/products/cat')
+    fetch(constant.url+'products/cat')
     .then(response=>response.json())
     .then(result=>{
         console.log(result);
@@ -40,7 +41,7 @@ function App() {
     });
   }
   const getAllProducts = ()=>{
-    fetch('http://localhost:5000/products')
+    fetch(constant.url+'products')
     .then(response=>response.json())
     .then(result=>{
         console.log(result.body);

@@ -7,6 +7,7 @@ import {useContext} from 'react';
 import DataContext from './../context/DataContext';
 import { BiWindowOpen } from 'react-icons/bi';
 import context from 'react-bootstrap/esm/AccordionContext';
+import constant from './../constant.js';
 
 const LoginPage = () => {
     const [username, setUsername] = useState("");
@@ -32,7 +33,7 @@ const LoginPage = () => {
     }
     const login = ()=>{
         if (checkValid()) {
-            fetch('http://localhost:5000/auth',{
+            fetch(constant.url+'/auth',{
                 method:"POST",
                 headers: {
                     'Content-Type':"application/json"
