@@ -11,7 +11,7 @@ const ProductCategory = () => {
             <div className="show-card-container" key={index}>
             <div className="show-card">
                 <p className="show-card-title">{cat}</p>
-                <img className="show-card-image" src={"/images/category/"+cat+".webp"} />
+                <img className="show-card-image" src={"./images/category/"+cat+".webp"} />
                 <a className="show-card-link" href={"/products/"+cat} >See more</a>
             </div>
             </div>))}
