@@ -2,7 +2,6 @@
 @media (min-width: 1281px) {
     .Hero-section-container {
         min-width: 1280px;
-        height: 550px;
         z-index: 1;
     }
 }
