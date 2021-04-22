@@ -41,6 +41,7 @@ function App() {
     });
   }
   const getAllProducts = ()=>{
+    console.log(constant.url+"products");
     fetch(constant.url+'products')
     .then(response=>response.json())
     .then(result=>{

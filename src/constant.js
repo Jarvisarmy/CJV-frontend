@@ -1,3 +1,5 @@
-const url = "https://cjv-backend.herokuapp.com/";
+var constant =  {
+    url: "https://cjv-backend.herokuapp.com/"
+}
 
-export default url
+export default constant

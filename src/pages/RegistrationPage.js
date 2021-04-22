@@ -65,7 +65,7 @@ const RegistrationPage = () => {
     }
     const register = ()=>{
         if (checkValid) {
-            fetch(constant.url+'/users',{
+            fetch(constant.url+'users',{
                 method:"POST",
                 headers: {
                     'Content-Type':"application/json"

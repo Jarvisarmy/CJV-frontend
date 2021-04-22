@@ -33,7 +33,7 @@ const LoginPage = () => {
     }
     const login = ()=>{
         if (checkValid()) {
-            fetch(constant.url+'/auth',{
+            fetch(constant.url+'auth',{
                 method:"POST",
                 headers: {
                     'Content-Type':"application/json"
